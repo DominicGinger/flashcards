@@ -92,7 +92,7 @@ async function handleRand() {
 
 async function handleLearn(): Promise<void> {
   await handleRand()
-  const shouldExit = await new Promise(resolve => rl.question('next? (Y\\n)', x => resolve(x === 'n')))
+  const shouldExit = await new Promise(resolve => rl.question('next? (Y\\n) ', x => resolve(x === 'n')))
   if (!shouldExit) {
     return handleLearn()
   }
